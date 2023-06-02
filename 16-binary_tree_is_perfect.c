@@ -42,6 +42,7 @@ int is_perfect(const binary_tree_t *tree, int d, int level)
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int d = depth(tree);
+
 	if (tree == NULL)
 		return (0);
 	return (is_perfect(tree, d, 0));

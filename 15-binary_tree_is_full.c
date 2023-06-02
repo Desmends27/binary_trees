@@ -10,13 +10,13 @@ int binary_tree_is_full(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-	/**
-	 * trees parent must not be null for it to be full
-	 * all the members in the tree must
-	 * have 0 or 2 children, hence the recursion
-	 */
-	if ((tree->left == NULL && tree->right == NULL) || (tree->left && tree->right && tree->parent))
-    return 1;
+	if (((tree->left == NULL && tree->right == NULL) 
+			|| (tree->left != NULL && tree->right != NULL)) && tree->parent)
+	{
+		return (1);
+	}
+	else
+		return (0);
 	full = binary_tree_is_full(tree->left) && binary_tree_is_full(tree->right);
 	return (full);
 }
